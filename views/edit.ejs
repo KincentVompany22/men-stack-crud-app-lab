@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add a Player</title>
+    <title>Edit a Player</title>
   </head>
   <body>
-    <h1>Add a New Player to the Squad!</h1>
-        <form action="/players" method="POST"> <!--Why is the action linked to /players?-->
+    <h1>Edit a Player</h1>
+        <form action="/players/<%=player._id%>?_method=PUT" method="POST"> <!--Overriding POST method with PUT, middlewear Method Override-->
             <label for="name"> Name: </label>
-            <input type="text" name="name" id="name" />
+            <input type="text" name="name" id="name" value="<%=player.name%>" />
 
             <label for="position"> Position: </label>
-            <select name="position" id="position">
+            <select name="position" id="position" value="<%=player.position%>" > <!-- Issue with value, not returning position, maybe value doesnt work-->
               <option value="GK">GK</option>
               <option value="LB">LB</option>
               <option value="CB">CB</option>
@@ -25,14 +25,14 @@
               <option value="CF">CF</option>
               <option value="ST">ST</option>
             </select>
-        
+
             <label for="number"> Number: </label>
-            <input type="number" name="number" id="number" />
+            <input type="number" name="number" id="number" value="<%=player.number%>" />
 
             <label for="isStarter"> Is Starter: </label>
-            <input type="checkbox" name="isStarter" id="isStarter" />
+            <input type="checkbox" name="isStarter" id="isStarter" <% if (player.isStarter === true) { %> checked <% } %> />
 
-            <button type="submit"> Add Player </button>
+            <button type="submit"> Edit Player </button>
         </form>
 
         <a href="/players"> Back to Squad </a>

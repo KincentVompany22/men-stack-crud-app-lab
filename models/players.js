@@ -4,10 +4,19 @@
 const mongoose = require("mongoose")
 
 const playerSchema = new mongoose.Schema({
-    name: String,
-    position: String,
-    number: Number,
-    isStarter: Boolean,
+    name: {
+        type: String,
+    }, 
+    position: {
+        type: String,
+        enum: ["GK", "LB", "CB", "RB", "CDM", "CM", "CAM", "LW", "RW", "CF", "ST"]
+    },
+    number: {
+        type: Number
+    },
+    isStarter: {
+        type: Boolean
+    },
 })
 
 const Player = mongoose.model("Player", playerSchema)
