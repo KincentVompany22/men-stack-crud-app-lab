@@ -12,18 +12,18 @@
             <input type="text" name="name" id="name" value="<%=player.name%>" />
 
             <label for="position"> Position: </label>
-            <select name="position" id="position" value="<%=player.position%>" > <!-- Issue with value, not returning position, maybe value doesnt work-->
-              <option value="GK">GK</option>
-              <option value="LB">LB</option>
-              <option value="CB">CB</option>
-              <option value="RB">RB</option>
-              <option value="CDM">CDM</option>
-              <option value="CM">CM</option>
-              <option value="CAM">CAM</option>
-              <option value="LW">LW</option>
-              <option value="RW">RW</option>
-              <option value="CF">CF</option>
-              <option value="ST">ST</option>
+            <select name="position" id="position" value="<%=player.position%>" > 
+                <option value="GK" <%= player.position === "GK" ? "selected" : "" %> > GK </option> <!-- using ternary operator to set default value as whatever was previously listed -->
+                <option value="LB"  <%= player.position === "LB" ? "selected" : "" %> >LB</option> <!-- learned this in skyrockut lecture -->
+                <option value="CB"  <%= player.position === "CB" ? "selected" : "" %> >CB</option>
+                <option value="RB"  <%= player.position === "RB" ? "selected" : "" %> >RB</option>
+                <option value="CDM" <%= player.position === "CDM" ? "selected" : "" %> >CDM</option>
+                <option value="CM"  <%= player.position === "CM" ? "selected" : "" %> >CM</option>
+                <option value="CAM" <%= player.position === "CAM" ? "selected" : "" %> >CAM</option>
+                <option value="LW"  <%= player.position === "LW" ? "selected" : "" %> >LW</option>
+                <option value="RW"  <%= player.position === "RW" ? "selected" : "" %> >RW</option>
+                <option value="CF"  <%= player.position === "CF" ? "selected" : "" %> >CF</option>
+                <option value="ST"  <%= player.position === "ST" ? "selected" : "" %> >ST</option>
             </select>
 
             <label for="number"> Number: </label>

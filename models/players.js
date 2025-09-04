@@ -6,16 +6,17 @@ const mongoose = require("mongoose")
 const playerSchema = new mongoose.Schema({
     name: {
         type: String,
+        required: true,
     }, 
     position: {
         type: String,
-        enum: ["GK", "LB", "CB", "RB", "CDM", "CM", "CAM", "LW", "RW", "CF", "ST"]
+        enum: ["GK", "LB", "CB", "RB", "CDM", "CM", "CAM", "LW", "RW", "CF", "ST"], // learned to add this and a dropdown in Skyrockit lecture!
     },
     number: {
-        type: Number
+        type: Number,
     },
     isStarter: {
-        type: Boolean
+        type: Boolean,
     },
 })
 
