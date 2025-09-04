@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add a Player</title>
+  </head>
+  <body>
+    <h1>Add a New Player to the Squad!</h1>
+        <form action="/players" method="POST"> <!--Why is the action linked to /players?-->
+            <label for="name"> Name: </label>
+            <input type="text" name="name" id="name" />
+
+            <label for="position"> Position: </label>
+            <input type="text" name="position" id="position" />
+
+            <label for="number"> Number: </label>
+            <input type="number" name="number" id="number" />
+
+            <label for="isStarter"> Is Starter: </label>
+            <input type="checkbox" name="isStarter" id="isStarter" />
+
+            <button type="submit"> Add Player </button>
+        </form>
+
+        <a href="/players"> Back to Squad </a>
+  </body>
+</html>

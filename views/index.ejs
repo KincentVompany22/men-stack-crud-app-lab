@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Soccer Team</title>
+</head>
+<body>
+    <h1>Manchester City Roster</h1>
+    <p>See details on your favorite Manchester City players!</p>
+    
+    <ul>
+        <% players.forEach((player) => { %>
+            <li><a href="players/<%= player._id %>"> <%= player.name %> </a></li>
+        <% }) %>
+    </ul>
+
+
+    <a href="players/new"> Add a Player </a>
+
+</body>
+</html>

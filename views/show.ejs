@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <%= player.name %> </title>
+</head>
+
+<body>
+
+  <h1> <%= player.name %> </h1>
+  <h2> #<%= player.number %> </h2>
+  <% if (player.isStarter === true) { %>
+    <h3>Starting at <%= player.position %> </h3>
+  <% } else { %>
+    <h3>Not Starting</h3>
+  <% } %>
+    
+    <a href="/players">View All Players</a>
+
+</body>
+</html>
