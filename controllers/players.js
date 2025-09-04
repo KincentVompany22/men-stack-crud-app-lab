@@ -60,9 +60,9 @@ router.put("/:playerId", async (req, res) => { // always a bit confused as to wh
         req.body.isStarter = false
     }
     await Player.findByIdAndUpdate(req.params.playerId, req.body) // find playerId and update the body
-    res.redirect("/")
-    // const showPlayer = await Player.findById(req.params.playerId) // trying to have it show the players/playerId page after editing
-    // res.render("show.ejs", { player: showPlayer})
+    // res.redirect("/")
+    const showPlayer = await Player.findById(req.params.playerId) 
+    res.render("show.ejs", { player: showPlayer}) // render the show page with that updated player details
 }) 
 
 // DELETE ROUTES
@@ -72,9 +72,6 @@ router.delete("/:playerId", async (req, res) => {
     await Player.findByIdAndDelete(req.params.playerId)
     res.redirect("/")
 })
-
-// Need to add delete button 
-    // On edit?
 
 
 module.exports = router

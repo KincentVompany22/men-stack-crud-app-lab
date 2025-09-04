@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edit a Player</title>
+    <title> Edit <%= player.name %> </title>
+    <link rel="stylesheet" href="/css/style.css" />
+    
   </head>
   <body>
     <h1>Edit a Player</h1>
@@ -14,7 +16,7 @@
             <label for="position"> Position: </label>
             <select name="position" id="position" value="<%=player.position%>" > 
                 <option value="GK" <%= player.position === "GK" ? "selected" : "" %> > GK </option> <!-- using ternary operator to set default value as whatever was previously listed -->
-                <option value="LB"  <%= player.position === "LB" ? "selected" : "" %> >LB</option> <!-- learned this in skyrockut lecture -->
+                <option value="LB"  <%= player.position === "LB" ? "selected" : "" %> >LB</option> <!-- learned this in skyrockit lecture -->
                 <option value="CB"  <%= player.position === "CB" ? "selected" : "" %> >CB</option>
                 <option value="RB"  <%= player.position === "RB" ? "selected" : "" %> >RB</option>
                 <option value="CDM" <%= player.position === "CDM" ? "selected" : "" %> >CDM</option>
@@ -33,6 +35,10 @@
             <input type="checkbox" name="isStarter" id="isStarter" <% if (player.isStarter === true) { %> checked <% } %> />
 
             <button type="submit"> Edit Player </button>
+        </form>
+
+        <form action="/players/<%=player._id%>?_method=DELETE" method="POST">
+            <button type="submit">Delete Player</button>
         </form>
 
         <a href="/players"> Back to Squad </a>

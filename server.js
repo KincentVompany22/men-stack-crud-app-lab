@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: true}))
 app.use(methodOverride("_method"))
 app.use(morgan("dev"))
 app.use("/players", playersController) // when you see the URL that starts with /players - use this router
-
+app.use(express.static("public")) // Importing Public Directory - to use CSS
 
 // INITIAL GET ROUTE
 app.get("/", async (req, res) => {
